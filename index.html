@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prodotti Dinamici</title>
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; }
+        .product { margin: 20px; padding: 20px; border: 1px solid #ccc; }
+        .product a { text-decoration: none; color: #333; }
+    </style>
+</head>
+<body>
+    <h1>Prodotti</h1>
+    <div id="product-list"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('prodotti.csv')
+                .then(response => response.text())
+                .then(text => {
+                    const lines = text.split('\n');
+                    const productList = document.getElementById('product-list');
+                    lines.forEach(line => {
+                        const [name, description, link] = line.split(',');
+                        const productDiv = document.createElement('div');
+                        productDiv.className = 'product';
+                        productDiv.innerHTML = `<h2>${name}</h2><p>${description}</p><a href="${link}">Vai alla pagina del prodotto</a>`;
+                        productList.appendChild(productDiv);
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
