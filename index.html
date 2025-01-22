@@ -9,25 +9,21 @@
 </head>
 <body>
     <header>
-        <h1>Best Amazon Products</h1>
+        <h1>Ema&#129302;'s Finds</h1>
     </header>
-    <!-- <main id="product-container"> -->
-        <!-- Product cards will be dynamically inserted here -->
-    <!-- </main> -->
 	
-	<main id="product-container">
+	<section class="product-container" id="product-container">
 		<div class="product-card" data-product-template hidden><!-- Template card (repeated dynamically) -->
 			<div class="product-image-container">
 				<img class="product-image" alt="Product Image">
 			</div>
-			<div class="product-info">
+			<a class="product-info" target="_blank">
 				<h2 class="product-title"></h2>
 				<p class="product-description"></p>
 				<p class="product-price"></p>
-				<a class="product-link" target="_blank">Buy Now</a>
-			</div>
+			</a>
 		</div>
-	</main>
+	</section>
 	<script src="script.js"></script>
 </body>
 </html>
